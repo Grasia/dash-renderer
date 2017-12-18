@@ -5,8 +5,7 @@ exec (open('dash_renderer/version.py').read())
 setup(
     name='dash_renderer',
     version=__version__,
-    author='Chris Parmer',
-    author_email='chris@plot.ly',
+    author='Akronix',
     packages=['dash_renderer'],
     include_package_data=True,
     license='MIT',
