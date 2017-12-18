@@ -3,7 +3,7 @@ from setuptools import setup
 exec (open('dash_renderer/version.py').read())
 
 setup(
-    name='dash_renderer',
+    name='dash-renderer-grasia',
     version=__version__,
     author='Akronix',
     packages=['dash_renderer'],
