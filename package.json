@@ -11,7 +11,7 @@
     "lint": "./node_modules/.bin/eslint --quiet --fix .",
     "prepublish": "npm test && npm run build-prod",
     "publish-all": "npm publish && echo \"twine!!!\"",
-    "publish-pypi": "npm run prepublish && python setup.py sdist upload",
+    "publish-pypi": "npm run prepublish && python3 setup.py sdist upload",
     "server": "serv -p 8080 .",
     "start": "npm run hot",
     "test": "npm run lint"
