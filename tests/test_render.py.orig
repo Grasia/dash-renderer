@@ -1773,6 +1773,8 @@ class Tests(IntegrationTests):
                 "input-{}, input-{}".format(i, i+1)
             )
         self.assertEqual(call_counts['container'].value, 1)
+<<<<<<< HEAD
+=======
 
     def test_update_react_version(self):
         import dash_renderer
@@ -1825,3 +1827,4 @@ class Tests(IntegrationTests):
 
         # Reset react version
         dash_renderer._set_react_version(dash_renderer._DEFAULT_REACT_VERSION)
+>>>>>>> c0f886d2a6d2507c22527a86be614f3c2838b667

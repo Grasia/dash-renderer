@@ -1,7 +1,12 @@
 import {connect} from 'react-redux'
 import {any} from 'ramda'
+<<<<<<< HEAD
 import React, {PropTypes} from 'react'
 import '!style!css!./loading.css'; // eslint-disable-line
+=======
+import React from 'react'
+import PropTypes from 'prop-types';
+>>>>>>> c0f886d2a6d2507c22527a86be614f3c2838b667
 
 function Loading(props) {
     if (any(r => r.status === 'loading', props.requestQueue)) {

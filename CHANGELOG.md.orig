@@ -2,6 +2,8 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+<<<<<<< HEAD
+=======
 ## [0.12.1] - 2018-03-29
 ### Fixed
 - Updates MANIFEST.in to include react and react-dom bundles for development mode
@@ -20,6 +22,7 @@ app = dash.Dash(...)
 ```
 https://github.com/plotly/dash-renderer/pull/45
 
+>>>>>>> c0f886d2a6d2507c22527a86be614f3c2838b667
 ## [0.11.3] - 2018-02-01
 ### Fixed
 - Fixed #41 in #42. In some cases, during initialization, callbacks may fired multiple times instead of just once. This only happens in certain scenarios where outputs have overlapping inputs and those inputs are leaves (they don't have any inputs of their own). See #41 for a simple example and #42 for some more extensive test cases.
