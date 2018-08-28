@@ -2,6 +2,22 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.13.2] - 2018-07-24
+### Fixed
+- Attempting to render a `Boolean` value to the page no longer crashes the app.
+
+## [0.13.1] - 2018-07-18
+### Fixed
+- If a callback references an `id` which does not exist in the DOM tree at the time it is executed, throw an informative front-end exception (previously an uninformative front-end exception was thrown). https://github.com/plotly/dash-renderer/issues/57
+
+## [0.13.0] - 2018-06-01
+### Fixed
+- Previously, if a component called `updateProps` with multiple properties, Dash would fire the callback multiple times (once for each property). Now, the callback is only fired once. https://github.com/plotly/dash-renderer/pull/54
+
+
+### Added
+- A `_dash-error` class was added to the "Error loading layout" and "Error loading dependencies" messages. https://github.com/plotly/dash-renderer/pull/55
+
 ## [0.12.1] - 2018-03-29
 ### Fixed
 - Updates MANIFEST.in to include react and react-dom bundles for development mode

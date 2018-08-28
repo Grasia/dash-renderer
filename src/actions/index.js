@@ -210,7 +210,17 @@ export function notifyObservers(payload) {
                     return;
                 }
                 InputGraph.dependenciesOf(node).forEach(outputId => {
-                    outputObservers.push(outputId);
+                    /*
+                     * Multiple input properties that update the same
+                     * output can change at once.
+                     * For example, `n_clicks` and `n_clicks_previous`
+                     * on a button component.
+                     * We only need to update the output once for this
+                     * update, so keep outputObservers unique.
+                     */
+                    if (!contains(outputId, outputObservers)) {
+                        outputObservers.push(outputId);
+                    }
                 });
             });
         }
@@ -407,8 +417,21 @@ function updateOutput(
             dependency.output.property === outputProp
         )
     );
+    const validKeys = keys(paths);
     if (inputs.length > 0) {
         payload.inputs = inputs.map(inputObject => {
+            // Make sure the component id exists in the layout
+            if (!contains(inputObject.id, validKeys)) {
+              throw ReferenceError(
+                "An invalid input object was used in an " +
+                "`Input` of a Dash callback. " +
+                "The id of this object is `" +
+                inputObject.id + "` and the property is `" +
+                inputObject.property +
+                "`. The list of ids in the current layout is " +
+                "`[" + validKeys.join(", ") + "]`"
+              )
+            }
             const propLens = lensPath(
                 concat(paths[inputObject.id],
                 ['props', inputObject.property]
@@ -422,6 +445,18 @@ function updateOutput(
     }
     if (state.length > 0) {
         payload.state = state.map(stateObject => {
+            // Make sure the component id exists in the layout
+            if (!contains(stateObject.id, validKeys)) {
+              throw ReferenceError(
+                "An invalid input object was used in a " +
+                "`State` object of a Dash callback. " +
+                "The id of this object is `" +
+                stateObject.id + "` and the property is `" +
+                stateObject.property +
+                "`. The list of ids in the current layout is " +
+                "`[" + validKeys.join(", ") + "]`"
+              )
+            }
             const propLens = lensPath(
                 concat(paths[stateObject.id],
                 ['props', stateObject.property]
