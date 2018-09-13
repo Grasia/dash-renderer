@@ -16,3 +16,7 @@ dash_renderer/bundle.js
 dash_renderer/bundle.js.map
 dash_renderer/react@*.min.js
 dash_renderer/react-dom@*.min.js
+dash_renderer_grasia/bundle.js
+dash_renderer_grasia/bundle.js.map
+dash_renderer_grasia/react@*.min.js
+dash_renderer_grasia/react-dom@*.min.js
