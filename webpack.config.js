@@ -27,5 +27,8 @@ module.exports = (env, argv) => ({
             }
         ],
     },
-    devtool: argv.mode === 'development' ? "eval-source-map" : 'none'
+    devtool: argv.mode === 'development' ? "eval-source-map" : 'none',
+    resolveLoader: {
+        moduleExtensions: ["-loader"]
+    }
 });
