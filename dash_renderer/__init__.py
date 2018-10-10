@@ -9,7 +9,10 @@ import sys
 # command in the dash_html_components package which printed out:
 # `dash_html_components.__init__: module references __file__`
 # TODO - Understand this better
-from .version import __version__
+
+#~ from .version import __version__
+__version__ = '0.14.1'
+
 __file__
 
 _DEFAULT_REACT_VERSION = '15.4.2'
