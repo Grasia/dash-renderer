@@ -78,7 +78,7 @@ _js_dist = [
         "external_url": (
             'https://unpkg.com/dash-renderer-grasia@{}'
             '/dash_renderer_grasia/dash_renderer_grasia.min.js'
-        ).format(__version__ + '-grasia'),
+        ).format(__version__),
         'namespace': 'dash_renderer'
     }
 ]
